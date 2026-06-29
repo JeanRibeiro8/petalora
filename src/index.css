@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-graphite font-body antialiased;
+  }
+
+  ::selection {
+    @apply bg-blush-300 text-graphite;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme('colors.blush.400');
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  .container-petalora {
+    @apply mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-blush-400 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-blush-500;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-graphite/20 bg-transparent px-7 py-3.5 text-sm font-semibold text-graphite transition-colors hover:bg-graphite/5;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.2em] text-blush-500;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
